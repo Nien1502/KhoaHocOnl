@@ -1,4 +1,4 @@
-﻿const API_BASE = window.API_BASE_URL || localStorage.getItem('apiBaseUrl') || 'http://localhost:8080';
+﻿const API_BASE = window.API_BASE_URL || localStorage.getItem('apiBaseUrl') || 'https://khoahoconl.onrender.com';
 function apiUrl(path) {
     return `${API_BASE}${path}`;
 }

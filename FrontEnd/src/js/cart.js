@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const API_BASE = localStorage.getItem("apiBaseUrl") || window.API_BASE_URL || "http://localhost:8080";
+  const API_BASE = localStorage.getItem("apiBaseUrl") || window.API_BASE_URL || "https://khoahoconl.onrender.com";
   const apiUrl = function (path) {
     return API_BASE + (path.startsWith("/") ? path : "/" + path);
   };
