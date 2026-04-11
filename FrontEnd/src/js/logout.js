@@ -4,6 +4,12 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
+  function hasActiveSession() {
+    var token = localStorage.getItem("authToken");
+    var user = localStorage.getItem("loggedInUser");
+    return Boolean((token && token.trim()) || (user && user.trim()));
+  }
+
   function clearSession() {
     [
       "currentuser",
@@ -19,9 +25,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   logoutLinks.forEach(function (link) {
     link.addEventListener("click", function (event) {
-      event.preventDefault();
-      clearSession();
-      window.location.href = "menu.html";
+      if (hasActiveSession()) {
+        event.preventDefault();
+        clearSession();
+        window.location.href = "menu.html";
+        return;
+      }
+
+      window.location.href = "login.html";
     });
   });
 });
