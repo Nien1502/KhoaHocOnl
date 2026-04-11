@@ -1409,7 +1409,7 @@ document.getElementById("logout-acc").addEventListener('click', (e) => {
     localStorage.removeItem("authTokenType");
     localStorage.removeItem("authTokenExpiresAt");
     localStorage.removeItem("authHeader");
-    window.location = "/";
+    window.location = "menu.html"
 })
 
 
